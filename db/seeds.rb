@@ -9,9 +9,9 @@
 #actor.save
 #actor = Actor.new({ first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock" })
 #actor.save
-actor - Actor.new(first_name: "Tom", last_name: "Hanks", known_for: "Castaway")
-actor.save
-actor - Actor.new(first_name: "Tom", last_name: "Cruise", known_for: "Mission Impossible")
-actor.save
-actor - Actor.new(first_name: "Johhny", last_name: "Depp", known_for: "")
-actor.save
+#actor = Actor.new({ first_name: "Tom", last_name: "Hanks", known_for: "Castaway" })
+#actor.save
+#actor = Actor.new({ first_name: "Tom", last_name: "Cruise", known_for: "Mission Impossible" })
+#actor.save
+#actor = Actor.new({ first_name: "Johhny", last_name: "Depp", known_for: "Black Pearl" })
+#actor.save
