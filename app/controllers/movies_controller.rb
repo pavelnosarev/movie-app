@@ -8,4 +8,19 @@ class MoviesController < ApplicationController
     movie = Movies.all
     render json: movie.as_json
   end
+
+  def query_params
+    input_value = params["actor"]
+    render json: { message: "#{input_value}" }
+  end
+
+  def segment_params
+    input_value = params [:id]
+    render json: { message: "the actor info is here: #{input_value}." }
+  end
+
+  def body_params
+    input_value = params["actor"]
+    render json: { message: "#{input_value}." }
+  end
 end
