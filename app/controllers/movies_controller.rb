@@ -34,8 +34,11 @@ class MoviesController < ApplicationController
       last_name: params["last_name"]
       known_for: params["known_for"]
     )
-     movie.save
-     render json: movie.as_json
+     if movie.save
+     render json: movie
+     else 
+      render json: {error: 422}
+     end
   end
   def show
     movie_id = params["id"]
@@ -45,11 +48,13 @@ class MoviesController < ApplicationController
   def update
     movie_id = params["id"]
     movie = Movie.find(id: movie_id)
-    movie.first_name = params["first_name"] || product.first_name
-    product.last_name = params["last_name"] || product.last_name
-    product.known_for = params["known_for"] || product.known_for
-    product.save
-    render json: movie.as_json
+    movie.first_name = params["first_name"] || movie.first_name
+    movie.last_name = params["last_name"] || movie.last_name
+    movie.known_for = params["known_for"] || movie.known_for
+    if movie.save
+      render json: movie
+    else
+      render json: {error: 422}
   end
   def destroy
     movie_id = params[:id]
