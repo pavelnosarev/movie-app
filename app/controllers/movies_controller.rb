@@ -24,9 +24,13 @@ class MoviesController < ApplicationController
     render json: { message: "#{input_value}." }
   end
 
+  # def index
+  #   movie = Movie.all
+  #   render json: movie.as_json
+  # end
   def index
-    movie = Movie.all
-    render json: movie.as_json
+    actors = Actor.all.order(age: :desc)
+    render json: actors.as_json
   end
   def create
     movie = Movie.new(
